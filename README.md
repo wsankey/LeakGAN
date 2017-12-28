@@ -1,5 +1,7 @@
 ﻿# LeakGAN
 The code of research paper [Long Text Generation via Adversarial Training with Leaked Information](https://arxiv.org/abs/1709.08624). 
+
+This paper has been accepted at the Thirty-Second AAAI Conference on Artificial Intelligence ([AAAI-18](https://aaai.org/Conferences/AAAI-18/)).
 ## Requirements
 * **Tensorflow r1.2.1**
 * Python 2.7
@@ -13,6 +15,17 @@ Automatically generating coherent and semantically meaningful text has many appl
 As the illustration of LeakGAN. We specifically introduce a hierarchical generator G, which consists of a high-level MANAGER module and a low-level WORKER module. The MANAGER is a long short term memory network (LSTM) and serves as a mediator. In each step, it receives generator D’s high-level feature representation, e.g., the feature map of the CNN, and uses it to form the guiding goal for the WORKER module in that timestep. As the information from D is internally-maintained and in an adversarial game it is not supposed to provide G with such information. We thus call it a leakage of information from D.
 
 Next, given the goal embedding produced by the MANAGER, the WORKER firstly encodes current generated words with another LSTM, then combines the output of the LSTM and the goal embedding to take a final action at current state. As such, the guiding signals from D are not only available to G at the end in terms of the scalar reward signals, but also available in terms of a goal embedding vector during the generation process to guide G how to get improved.
+
+## Reference
+```bash
+@article{guo2017long,
+  title={Long Text Generation via Adversarial Training with Leaked Information},
+  author={Guo, Jiaxian and Lu, Sidi and Cai, Han and Zhang, Weinan and Yu, Yong and Wang, Jun},
+  journal={arXiv preprint arXiv:1709.08624},
+  year={2017}
+}
+```
+
 
 You can get the code and run the experiments in follow folders.
 ## Folder
