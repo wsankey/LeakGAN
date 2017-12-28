@@ -229,7 +229,8 @@ def main():
         #  pre-train generator
                     print 'Start pre-training...'
                     log.write('pre-training...\n')
-                    for epoch in xrange(PRE_EPOCH_NUM/16):
+
+                    for epoch in xrange(PRE_EPOCH_NUM/10):
                         loss = pre_train_epoch(sess, leakgan, gen_data_loader)
                         if epoch % 5 == 0:
                             generate_samples(sess, leakgan, BATCH_SIZE, generated_num, negative_file,0)
